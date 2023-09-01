@@ -18,6 +18,7 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { useState } from 'react';
+import trackExample from '/src/images/TrackExampleHorizontal.png';
 import gradientDivider from '/src/images/GradientDivider.svg';
 
 import { supabase } from '../../App/components/supabaseClient';
@@ -94,7 +95,7 @@ const Home = () => {
       m="3rem"
       minHeight="80vh"
     >
-      <Image src='/src/images/TrackExampleHorizontal.png' mt='5rem' width={{ base:'90vw', md:'500px'}}/>
+      <Image src={trackExample} mt='5rem' width={{ base:'90vw', md:'500px'}}/>
       <VStack
         spacing="7"
         width={{ base: '100vw', sm: '60vw', md: '45vw' }}
