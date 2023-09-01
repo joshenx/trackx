@@ -70,11 +70,11 @@ const Home = () => {
     });
   };
 
-  const handleScrollToTop = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleScrollToTop = () => {
     scrollToTop();
   };
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let inputValue = e.target.value;
     setEmail(inputValue);
   };
