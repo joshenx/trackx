@@ -103,7 +103,7 @@ const Home = () => {
         alignItems={{ base: 'center' }}
         textAlign='center'
       >
-        <Heading color='#252A33' as='h1' size='3xl' >
+        <Heading letterSpacing='0.2rem' color='#252A33' as='h1' size='3xl' >
           Discover <Text
               as={'span'}
               position={'relative'}
