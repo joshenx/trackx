@@ -94,7 +94,7 @@ const Home = () => {
       m="3rem"
       minHeight="80vh"
     >
-      <Image src='src/images/TrackExampleHorizontal.png' mt='5rem' width={{ base:'90vw', md:'500px'}}/>
+      <Image src='/src/images/TrackExampleHorizontal.png' mt='5rem' width={{ base:'90vw', md:'500px'}}/>
       <VStack
         spacing="7"
         width={{ base: '100vw', sm: '60vw', md: '45vw' }}
