@@ -98,7 +98,7 @@ const Home = () => {
       <VStack
         spacing="7"
         width={{ base: '100vw', sm: '60vw', md: '45vw' }}
-        px={{ base: '2rem', md: '0rem' }}
+        px={{ base: '1rem', md: '1rem' }}
         alignItems={{ base: 'center' }}
         textAlign='center'
       >
