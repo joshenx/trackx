@@ -40,7 +40,7 @@ const Footer = () => {
           <Stack spacing={6}>
             <WhiteLogo />
             <Text fontSize={'sm'}>
-              © {new Date().getFullYear()} trackx. All rights reserved.
+              © {new Date().getFullYear()} Trackx. All rights reserved.
             </Text>
           </Stack>
           <Stack align={'flex-start'}>
