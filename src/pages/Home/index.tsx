@@ -202,7 +202,7 @@ const Home = () => {
         We're still in progress!
       </Text>
       <Text textAlign='center' fontSize="md" >
-        We're as excited as you to create trackx, and we strongly believe in its transformative power
+        We're as excited as you to create Trackx, and we strongly believe in its transformative power
         to help you achieve your career dreams. To stay up to date, subscribe to receive the latest news
         from us! 
       </Text>
