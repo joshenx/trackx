@@ -1,7 +1,7 @@
 import { extendTheme } from '@chakra-ui/react';
 
 const theme = extendTheme({
-  initialColorMode: 'dark',
+  initialColorMode: 'light',
   useSystemColorMode: false,
   components: {
     Button: {
