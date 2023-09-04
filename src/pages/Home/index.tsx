@@ -23,6 +23,8 @@ import gradientDivider from '/src/images/GradientDivider.svg';
 
 import { supabase } from '../../App/components/supabaseClient';
 import SimpleThreeColumns from '../../App/components/SimpleThreeColumns';
+import SplitWithImage from '../../App/components/SplitWithImage';
+import SplitWithMessage from '../../App/components/SplitWithMessage';
 
 const Home = () => {
   const [email, setEmail] = useState('');
@@ -41,10 +43,10 @@ const Home = () => {
 
   const handleSubmit = async () => {
     if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
-      console.log("Invalid Email");
+      console.log('Invalid Email');
       setErrorMsg('Invalid email.');
       openAlert();
-      return;  
+      return;
     }
 
     console.log(`Submitting email..`);
@@ -67,7 +69,7 @@ const Home = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: 'smooth',
     });
   };
 
@@ -85,7 +87,6 @@ const Home = () => {
     setName(inputValue);
   };
 
-
   return (
     <Flex
       gap={2}
@@ -95,42 +96,51 @@ const Home = () => {
       m="3rem"
       minHeight="80vh"
     >
-      <Image src={trackExample} mt='5rem' width={{ base:'90vw', md:'500px'}}/>
+      <Image
+        src={trackExample}
+        mt="5rem"
+        width={{ base: '90vw', md: '500px' }}
+      />
       <VStack
         spacing="7"
         width={{ base: '100vw', sm: '60vw', md: '45vw' }}
         px={{ base: '1rem', md: '1rem' }}
         alignItems={{ base: 'center' }}
-        textAlign='center'
+        textAlign="center"
       >
-        <Heading letterSpacing='0.2rem' color='#252A33' as='h1' size='3xl' >
-          Discover <Text
-              as={'span'}
-              position={'relative'}
-              _after={{
-                content: "''",
-                width: 'full',
-                height: '15%',
-                position: 'absolute',
-                bottom: 2,
-                left: 2,
-                bg: 'red.200',
-                zIndex: -1,
-              }}>
-              career tracks
-            </Text> to reach your career goal.</Heading>
+        <Heading letterSpacing="0.2rem" color="#252A33" as="h1" size="3xl">
+          Discover{' '}
+          <Text
+            as={'span'}
+            position={'relative'}
+            _after={{
+              content: "''",
+              width: 'full',
+              height: '15%',
+              position: 'absolute',
+              bottom: 2,
+              left: 2,
+              bg: 'red.200',
+              zIndex: -1,
+            }}
+          >
+            career tracks
+          </Text>{' '}
+          to reach your career goal.
+        </Heading>
         <Text fontSize="lg" fontStyle="normal">
-          Learn from others’ anonymous & transparent recounts of their career paths and start a conversation with them today.
+          Learn from others’ anonymous & transparent recounts of their career
+          paths and start a conversation with them today.
         </Text>
         <Divider my="1rem" />
-        
+
         <Input
-          focusBorderColor='brand.red'
+          focusBorderColor="brand.red"
           width={{ base: '60vw', md: '20vw' }}
           value={email}
           onChange={handleEmailChange}
           variant="filled"
-          type='email'
+          type="email"
           mt="0.5rem"
           size="md"
           placeholder="Type your email here"
@@ -146,7 +156,14 @@ const Home = () => {
           variant="flushed"
         /> */}
         {!showAlert && !showSuccess && (
-          <Button background='brand.red' color='white' fontWeight="normal" m="1rem 0rem" _hover={{background:'#E86580'}} onClick={handleSubmit}>
+          <Button
+            background="brand.red"
+            color="white"
+            fontWeight="normal"
+            m="1rem 0rem"
+            _hover={{ background: '#E86580' }}
+            onClick={handleSubmit}
+          >
             Notify Me
           </Button>
         )}
@@ -155,9 +172,7 @@ const Home = () => {
         <ScaleFade initialScale={0.9} in={showAlert}>
           <Alert mt="1rem" borderRadius="10px" status="error" variant="solid">
             <AlertIcon />
-            <AlertDescription fontSize="sm">
-              {errorMsg}
-            </AlertDescription>
+            <AlertDescription fontSize="sm">{errorMsg}</AlertDescription>
             <CloseButton
               alignSelf="flex-start"
               position="relative"
@@ -185,50 +200,61 @@ const Home = () => {
           </Alert>
         </ScaleFade>
       )}
-      <Image src={gradientDivider} width='100vw' mt='10vh' mb='-5vw'/>
-        <Text textAlign='center' fontSize="3xl" fontWeight="600">
+      <Image src={gradientDivider} width="100vw" mt="10vh" mb="-5vw" />
+      <Text textAlign="center" fontSize="3xl" fontWeight="600">
         Get the guidance you need in one look.
-        </Text>
+      </Text>
       <SimpleThreeColumns />
+
+      <SplitWithImage pt="5rem" />
+      <SplitWithMessage pt="5rem" />
       <VStack
         spacing="5"
         width={{ base: '100vw', sm: '60vw', md: '30vw' }}
         px={{ base: '1rem', md: '0rem' }}
         alignItems={{ base: 'center' }}
-        my='10vh'
-        textAlign='center'
+        my="10vh"
+        textAlign="center"
       >
-      <Text textAlign='center' fontSize="2xl" fontWeight="600">
-        We're still in progress!
-      </Text>
-      <Text textAlign='center' fontSize="md" >
-        We're as excited as you to create Trackx, and we strongly believe in its transformative power
-        to help you achieve your career dreams. To stay up to date, subscribe to receive the latest news
-        from us! 
-      </Text>
-      
-      <Button background='brand.red' color='white' fontWeight="normal" m="1rem 0rem" _hover={{background:'#E86580'}} onClick={handleScrollToTop}>
-        Subscribe
-      </Button>
-      <Box>
-        <Icon
-          as={Arrow}
-          color={'gray.800'}
-          w={71}
-          position={'relative'}
-          right={-91}
-          top={'-30px'}
-        />
-        <Text
-          fontSize={'lg'}
-          fontFamily={'Caveat'}
-          position={'relative'}
-          right={'-130px'}
-          top={'-75px'}
-          transform={'rotate(10deg)'}>
-          Get notified!
+        <Text textAlign="center" fontSize="2xl" fontWeight="600">
+          We're still in progress!
         </Text>
-      </Box>
+        <Text textAlign="center" fontSize="md">
+          We're as excited as you to create Trackx, and we strongly believe in
+          its transformative power to help you achieve your career dreams. To
+          stay up to date, subscribe to receive the latest news from us!
+        </Text>
+
+        <Button
+          background="brand.red"
+          color="white"
+          fontWeight="normal"
+          m="1rem 0rem"
+          _hover={{ background: '#E86580' }}
+          onClick={handleScrollToTop}
+        >
+          Subscribe
+        </Button>
+        <Box>
+          <Icon
+            as={Arrow}
+            color={'gray.800'}
+            w={71}
+            position={'relative'}
+            right={-91}
+            top={'-30px'}
+          />
+          <Text
+            fontSize={'lg'}
+            fontFamily={'Caveat'}
+            position={'relative'}
+            right={'-130px'}
+            top={'-75px'}
+            transform={'rotate(10deg)'}
+          >
+            Get notified!
+          </Text>
+        </Box>
       </VStack>
     </Flex>
   );

@@ -79,7 +79,7 @@ const NavBar = () => {
           onClick={isOpen ? onClose : onOpen}
         />
         <HStack spacing={8} alignItems={'center'}>
-          <DefaultLogo pl='1rem' my='0.5rem'/>
+          <DefaultLogo pl="1rem" my="0.5rem" />
           {/* <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
             {pagesData
               .filter(({ path }: routerType) => path !== '*')
